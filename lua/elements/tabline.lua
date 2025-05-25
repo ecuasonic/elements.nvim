@@ -10,7 +10,7 @@ function M.harpoon_files()
 
     -- if there are no marks to begin with, return blank.
     if marks_length == 0 then
-        return "%#Blank#"
+        return "%#TabLineFill#"
     end
 
     -- for each mark, insert into tabline table.
@@ -38,7 +38,7 @@ function M.harpoon_files()
 
     -- set last element as blank highlight
     -- guarentees non-empty contents
-    contents[#contents + 1] = "%#Blank#"
+    contents[#contents + 1] = "%#TabLineFill#"
     return table.concat(contents)
 end
 

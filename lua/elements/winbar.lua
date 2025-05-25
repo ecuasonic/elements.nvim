@@ -60,7 +60,8 @@ autocmd({ "BufWinEnter", "WinLeave", "CursorHold", "VimResized" }, {
         local win_id = vim.fn.win_getid()
         local win_width = vim.api.nvim_win_get_width(win_id)
         if win_width and win_width > 1 then
-            winbars[win_id] = contents ~= "" and winbar.truncate_winbar(contents, max_path_length, win_width) or "None"
+            -- winbars[win_id] = contents ~= "" and winbar.truncate_winbar(contents, win_width, win_width) or "None"
+            winbars[win_id] = contents
             update_winbar(win_id)
         end
     end
